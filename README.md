@@ -53,28 +53,20 @@ You need to obtain a DeepSeek API key:
 
 ## Parameter Details
 * markers
-This should be the direct output from Seurat::FindAllMarkers() or a dataframe with identical structure.
+  
+This should be the direct output from Seurat::FindAllMarkers() or a dataframe with identical structure. Required columns: cluster, gene, avg_log2FC. The function will rank genes by avg_log2FC (descending) within each cluster.
 
-Required columns: cluster, gene, avg_log2FC.
+* topN
+  
+We recommend values between 5-20. Higher values provide more gene context but increase prompt size and API costs. Lower values may lead to less specific annotations.
 
-The function will rank genes by avg_log2FC (descending) within each cluster.
+* api_key
+  
+Keep your API key secure.
 
-topN
-We recommend values between 5-20.
-
-Higher values provide more gene context but increase prompt size and API costs.
-
-Lower values may lead to less specific annotations.
-
-api_key
-Keep your API key secure. Consider using environment variables for production:
-
-r
-Sys.setenv(DEEPSEEK_API_KEY = "your_key_here")
-# Then in function call: api_key = Sys.getenv("DEEPSEEK_API_KEY")
-ann_type
+* ann_type
+  
 "region": Best for spatial transcriptomics data (e.g., identifying "tumor core", "immune niche", "stromal region").
-
 "celltype": Best for single-cell RNA-seq data (e.g., identifying "T cells", "Fibroblasts", "Endothelial cells").
 
 model
