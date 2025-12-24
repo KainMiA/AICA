@@ -52,11 +52,41 @@ You need to obtain a DeepSeek API key:
     print(annotations)
 
 ## Parameter Details
-Parameter	Type	Default	Description
-markers	data.frame	Required	Output from Seurat's FindAllMarkers, must contain cluster, gene, and avg_log2FC columns
-topN	integer	10	Number of top marker genes per cluster used for annotation
-api_key	character	Required	DeepSeek API key
-tissuename	character	Required	Tissue name (e.g., "Human Liver", "Mouse Brain")
-ann_type	character	"region"	Annotation type: "region" (spatial regions) or "celltype" (cell types)
-model	character	"deepseek-reasoner"	LLM model name
-web_search	logical	FALSE	Whether to enable web search enhancement
+* markers
+This should be the direct output from Seurat::FindAllMarkers() or a dataframe with identical structure.
+
+Required columns: cluster, gene, avg_log2FC.
+
+The function will rank genes by avg_log2FC (descending) within each cluster.
+
+topN
+We recommend values between 5-20.
+
+Higher values provide more gene context but increase prompt size and API costs.
+
+Lower values may lead to less specific annotations.
+
+api_key
+Keep your API key secure. Consider using environment variables for production:
+
+r
+Sys.setenv(DEEPSEEK_API_KEY = "your_key_here")
+# Then in function call: api_key = Sys.getenv("DEEPSEEK_API_KEY")
+ann_type
+"region": Best for spatial transcriptomics data (e.g., identifying "tumor core", "immune niche", "stromal region").
+
+"celltype": Best for single-cell RNA-seq data (e.g., identifying "T cells", "Fibroblasts", "Endothelial cells").
+
+model
+"deepseek-reasoner": Recommended for best performance (default).
+
+"deepseek-chat": General-purpose model.
+
+Other models may be available; check DeepSeek's documentation for updates.
+
+web_search
+Enable only when you need cutting-edge knowledge (e.g., newly discovered cell types).
+
+May be useful for cancer or developmental biology research where nomenclature evolves rapidly.
+
+Note: Increases response time and may incur higher API costs.
