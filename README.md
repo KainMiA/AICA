@@ -67,14 +67,19 @@ You need to obtain a DeepSeek API key:
 * ann_type
   
     "region": Best for spatial transcriptomics data (e.g., identifying "tumor core", "immune niche", "stromal region").
+  
     "celltype": Best for single-cell RNA-seq data (e.g., identifying "T cells", "Fibroblasts", "Endothelial cells").
 
 * model
+  
     "deepseek-reasoner": Recommended for best performance (default).
+  
     "deepseek-chat": General-purpose model.
+  
     Other models may be available; check this repository for updates.
 
 * web_search
+  
     Enable only when you need cutting-edge knowledge (e.g., newly discovered cell types). May be useful for cancer or developmental biology research where nomenclature evolves rapidly.
 
 <hr>
