@@ -18,6 +18,15 @@ AICA (AI-powered Cell Annotation) is an R function that leverages large language
 
 ## Dependencies
 ### Required R Packages
-dplyr (≥ 1.0.0)
-httr (≥ 1.4.0)
-jsonlite (≥ 1.8.0)
+dplyr
+httr 
+jsonlite
+
+## API Key
+You need to obtain a DeepSeek API key:
+
+1.Visit the DeepSeek Platform
+
+2.Register an account and create an API key
+
+3.Ensure your account has sufficient balance
