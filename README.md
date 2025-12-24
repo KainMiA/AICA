@@ -1,7 +1,7 @@
 # AICA: AI-powered Cell Annotation
 AICA (AI-powered Cell Annotation) is an R function that leverages large language models (LLMs) to provide automated annotation for single-cell and spatial transcriptomics data. This tool analyzes differentially expressed genes and uses advanced LLM models (like DeepSeek) to intelligently identify cell types or tissue regions.
 
-Features
+## Features
 🤖 AI-Driven Annotation: Utilize large language models for intelligent biological annotation
 
 🎯 Multiple Annotation Types: Support for single-cell transcriptomics (cell types) and spatial transcriptomics (tissue regions)
@@ -12,3 +12,12 @@ Features
 
 🔧 Easy Integration: Seamlessly integrates with Seurat analysis pipelines
 
+## Installation
+
+    devtools::install_github("KainMiA/AICA")
+
+## Dependencies
+### Required R Packages
+dplyr (≥ 1.0.0)
+httr (≥ 1.4.0)
+jsonlite (≥ 1.8.0)
