@@ -45,7 +45,7 @@ You need to obtain a DeepSeek API key:
       api_key = "your_deepseek_api_key_here",
       tissuename = "Mouse Brain",
       ann_type = "celltype",  # or "region" for spatial transcriptomics
-      web_search = FALSE
+      web_search = TRUE
     )
     
     # 3. View annotation results
