@@ -30,3 +30,31 @@ You need to obtain a DeepSeek API key:
 2.Register an account and create an API key
 
 3.Ensure your account has sufficient balance
+
+## Usage
+    # 1. Perform differential expression analysis
+    library(Seurat)
+    all_markers <- FindAllMarkers(seurat_object)
+    
+    # 2. Run AICA for annotation
+    annotations <- run_aica(
+      markers = all_markers,
+      topN = 10,
+      api_key = "your_deepseek_api_key_here",
+      tissuename = "Mouse Brain",
+      ann_type = "celltype",  # or "region" for spatial transcriptomics
+      web_search = FALSE
+    )
+    
+    # 3. View annotation results
+    print(annotations)
+
+## Parameter Details
+Parameter	Type	Default	Description
+markers	data.frame	Required	Output from Seurat's FindAllMarkers, must contain cluster, gene, and avg_log2FC columns
+topN	integer	10	Number of top marker genes per cluster used for annotation
+api_key	character	Required	DeepSeek API key
+tissuename	character	Required	Tissue name (e.g., "Human Liver", "Mouse Brain")
+ann_type	character	"region"	Annotation type: "region" (spatial regions) or "celltype" (cell types)
+model	character	"deepseek-reasoner"	LLM model name
+web_search	logical	FALSE	Whether to enable web search enhancement
