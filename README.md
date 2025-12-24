@@ -54,7 +54,7 @@ You need to obtain a DeepSeek API key:
 ## Parameter Details
 * markers
   
-This should be the direct output from Seurat::FindAllMarkers() or a dataframe with identical structure. Required columns: cluster, gene, avg_log2FC. The function will rank genes by avg_log2FC (descending) within each cluster.
+    This should be the direct output from Seurat::FindAllMarkers() or a dataframe with identical structure. Required columns: cluster, gene, avg_log2FC. The function will rank genes by avg_log2FC (descending) within each cluster.
 
 * topN
   
