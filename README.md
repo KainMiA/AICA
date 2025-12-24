@@ -58,27 +58,23 @@ You need to obtain a DeepSeek API key:
 
 * topN
   
-We recommend values between 5-20. Higher values provide more gene context but increase prompt size and API costs. Lower values may lead to less specific annotations.
+    We recommend values between 5-20. Higher values provide more gene context but increase prompt size and API costs. Lower values may lead to less specific annotations.
 
 * api_key
   
-Keep your API key secure.
+    Keep your API key secure.
 
 * ann_type
   
-"region": Best for spatial transcriptomics data (e.g., identifying "tumor core", "immune niche", "stromal region").
-"celltype": Best for single-cell RNA-seq data (e.g., identifying "T cells", "Fibroblasts", "Endothelial cells").
+    "region": Best for spatial transcriptomics data (e.g., identifying "tumor core", "immune niche", "stromal region").
+    "celltype": Best for single-cell RNA-seq data (e.g., identifying "T cells", "Fibroblasts", "Endothelial cells").
 
-model
-"deepseek-reasoner": Recommended for best performance (default).
+* model
+    "deepseek-reasoner": Recommended for best performance (default).
+    "deepseek-chat": General-purpose model.
+    Other models may be available; check this repository for updates.
 
-"deepseek-chat": General-purpose model.
-
-Other models may be available; check DeepSeek's documentation for updates.
-
-web_search
-Enable only when you need cutting-edge knowledge (e.g., newly discovered cell types).
-
-May be useful for cancer or developmental biology research where nomenclature evolves rapidly.
-
-Note: Increases response time and may incur higher API costs.
+* web_search
+    Enable only when you need cutting-edge knowledge (e.g., newly discovered cell types). May be useful for cancer or developmental biology research where nomenclature evolves rapidly.
+————————————————————————————————————————————————————————————————————————————————————————————————————————
+Disclaimer: This tool provides AI-assisted biological annotations for reference only. Users should biologically validate annotation results and assume full responsibility for using this tool.
