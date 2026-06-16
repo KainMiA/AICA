@@ -77,10 +77,6 @@ You need to obtain a DeepSeek API key:
   
     Other models may be available; check this repository for updates.
 
-* web_search
-  
-    Enable only when you need cutting-edge knowledge (e.g., newly discovered cell types). May be useful for cancer or developmental biology research where nomenclature evolves rapidly.
-
 <hr>
 
 Disclaimer: This tool provides AI-assisted biological annotations for reference only. Users should biologically validate annotation results and assume full responsibility for using this tool.
